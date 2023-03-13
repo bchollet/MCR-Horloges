@@ -11,13 +11,15 @@ import java.awt.event.MouseEvent;
 import static utils.ProgramConstant.DIAL_SIZE;
 
 public abstract class ChronometerUI extends JPanel implements Observer {
-    private long seconds;
+    private final Chronometer chronometer;
     private final int id;
+    private long seconds;
 
     protected ChronometerUI(Chronometer chronometer) {
+        this.chronometer = chronometer;
         chronometer.addObserver(this);
-        seconds = chronometer.getSeconds();
         id = chronometer.getId();
+        seconds = chronometer.getSeconds();
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -46,5 +48,9 @@ public abstract class ChronometerUI extends JPanel implements Observer {
 
     public long getSeconds() {
         return seconds;
+    }
+
+    public void unsubscribeSubject() {
+        chronometer.deleteObserver(this);
     }
 }

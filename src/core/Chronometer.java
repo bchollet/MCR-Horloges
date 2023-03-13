@@ -15,13 +15,11 @@ public class Chronometer extends Subject {
     private long seconds = 0;
     private Timer timer;
     private boolean isRunning;
-    private boolean hasChanged;
 
     public Chronometer() {
         observers = new ArrayList<>();
         id = ++count;
         isRunning = false;
-        hasChanged = false;
     }
 
     public void start() {
@@ -32,8 +30,7 @@ public class Chronometer extends Subject {
                 @Override
                 public void run() {
                     seconds++;
-                    tick();
-                    //TODO: NotifyAll
+                    notifyObservers();
                 }
             }, 1000, 1000);
         }
@@ -57,24 +54,14 @@ public class Chronometer extends Subject {
     public void reset() {
         stop();
         seconds = 0;
-        tick();
+        notifyObservers();
     }
 
     public int getId() {
         return id;
     }
 
-    public boolean isRunning() {
-        return isRunning;
-    }
-
     public long getSeconds() {return seconds;}
-
-    private void tick() {
-        setChanged();
-        notifyObservers();
-        clearChanged();
-    }
 
     @Override
     public void addObserver(Observer o) {
@@ -91,21 +78,6 @@ public class Chronometer extends Subject {
         for (Observer o : observers) {
             deleteObserver(o);
         }
-    }
-
-    @Override
-    protected void setChanged() {
-        hasChanged = true;
-    }
-
-    @Override
-    protected void clearChanged() {
-        hasChanged = false;
-    }
-
-    @Override
-    public boolean hasChanged() {
-        return hasChanged;
     }
 
     @Override
