@@ -7,6 +7,12 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ChronometerNumUI extends ChronometerUI{
+
+    /**
+     * Constructs a visual representation of a numeric chronometer. Subscribes to a given chronometer
+     * toggle chronometer task on click
+     * @param chronometer Observable chronometer the UI subscribes to
+     */
     public ChronometerNumUI(Chronometer chronometer) {
         super(chronometer);
     }

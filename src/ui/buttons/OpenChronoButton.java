@@ -8,9 +8,18 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 public abstract class OpenChronoButton extends JButton {
+    /**
+     * Creates a button with a given label
+     * @param label Label shown on button
+     */
     protected OpenChronoButton(String label) {
         super(label);
     }
+
+    /**
+     * Instantiates a JFrame containing a ChronometerUI. Sets frame to unsubscribe from Observable upon close
+     * @param chronometerUi A visual representation of a chronometer
+     */
     protected void createFrameWithChronometer(ChronometerUI chronometerUi) {
         JFrame frame = new JFrame();
         frame.add(chronometerUi);
@@ -23,6 +32,11 @@ public abstract class OpenChronoButton extends JButton {
         setupFrame(frame, false);
     }
 
+    /**
+     * Instantiates a JFrame containing a layout for multiple ChronometerUI.
+     * Sets frame to unsubscribe from  all observables upon close
+     * @param allChronoLayoutUI A layout that can contains multiple ChronometerUI
+     */
     protected void createFrameWithLayout(AllChronoLayoutUI allChronoLayoutUI) {
         JFrame frame = new JFrame();
         frame.add(allChronoLayoutUI);
@@ -35,6 +49,11 @@ public abstract class OpenChronoButton extends JButton {
         setupFrame(frame, true);
     }
 
+    /**
+     * Sets various specific settings on given JFrame
+     * @param frame JFrame to set
+     * @param resizeable True to allow resizeable frame
+     */
     private void setupFrame(JFrame frame, boolean resizeable) {
         frame.setResizable(resizeable);
         frame.pack();

@@ -4,9 +4,13 @@ import core.Chronometer;
 
 import java.awt.*;
 
-import static utils.ProgramConstant.ROMAN_DIAL_FILE;
-
 public class ChronoAnalogRomanAnalogUI extends ChronometerAnalogUI {
+    private static final String ROMAN_DIAL_FILE = "cadran_chiffres_romains.jpg";
+
+    /**
+     * Creates a visual representation of analog chronometer with a roman dial
+     * @param chronometer observable the UI subscribes to
+     */
     public ChronoAnalogRomanAnalogUI(Chronometer chronometer) {
         super(chronometer, ROMAN_DIAL_FILE, Color.GRAY, Color.ORANGE);
     }

@@ -10,6 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ControlPanelUI extends JPanel {
+
+    /**
+     * A panel containing all buttons to manage all given chronometers
+     * @param nbChono number of chronometers to manage
+     */
     public ControlPanelUI(int nbChono) {
         List<Chronometer> chronometers = new ArrayList<>();
         this.setLayout(new GridLayout(nbChono + 1, 1));

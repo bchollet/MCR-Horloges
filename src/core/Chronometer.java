@@ -22,6 +22,9 @@ public class Chronometer extends Subject {
         isRunning = false;
     }
 
+    /**
+     * Starts a task that increments number of elapsed seconds each seconds
+     */
     public void start() {
         if (!isRunning) {
             timer = new Timer();
@@ -36,6 +39,9 @@ public class Chronometer extends Subject {
         }
     }
 
+    /**
+     * Stop TimerTask if it is running
+     */
     public void stop() {
         if (isRunning) {
             timer.cancel();
@@ -43,6 +49,9 @@ public class Chronometer extends Subject {
         }
     }
 
+    /**
+     * Switch TimerTask between on and off
+     */
     public void toggle() {
         if (isRunning) {
             stop();
@@ -51,6 +60,9 @@ public class Chronometer extends Subject {
         }
     }
 
+    /**
+     * Stops TimerTask and reset counter
+     */
     public void reset() {
         stop();
         seconds = 0;
