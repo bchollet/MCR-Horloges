@@ -1,7 +1,7 @@
 package ui.layouts;
 
 import core.Chronometer;
-import ui.chronometer.ChronoAnalogArabicAnalogUI;
+import ui.chronometer.ChronoAnalogArabicUI;
 import ui.chronometer.ChronometerUI;
 
 import java.util.List;
@@ -15,7 +15,7 @@ public class AllChronoArabicLayoutUI extends AllChronoLayoutUI{
     public AllChronoArabicLayoutUI(List<Chronometer> chronometers) {
         super();
         for (Chronometer c : chronometers) {
-            ChronometerUI chronoAnalogArabicAnalogUI = new ChronoAnalogArabicAnalogUI(c);
+            ChronometerUI chronoAnalogArabicAnalogUI = new ChronoAnalogArabicUI(c);
             this.chronometerUIs.add(chronoAnalogArabicAnalogUI);
             this.add(chronoAnalogArabicAnalogUI);
         }

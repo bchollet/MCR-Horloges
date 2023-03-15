@@ -1,7 +1,7 @@
 package ui.buttons;
 
 import core.Chronometer;
-import ui.chronometer.ChronoAnalogRomanAnalogUI;
+import ui.chronometer.ChronoAnalogRomanUI;
 import ui.layouts.AllChronoRomanLayoutUI;
 
 import java.util.List;
@@ -15,7 +15,7 @@ public class OpenChronoRomanButton extends OpenChronoButton {
      */
     public OpenChronoRomanButton(Chronometer chronometer) {
         super(ROMAN_CLOCK);
-        this.addActionListener(e -> super.createFrameWithChronometer(new ChronoAnalogRomanAnalogUI(chronometer)));
+        this.addActionListener(e -> super.createFrameWithChronometer(new ChronoAnalogRomanUI(chronometer)));
     }
 
     /**

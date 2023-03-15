@@ -1,7 +1,7 @@
 package ui.buttons;
 
 import core.Chronometer;
-import ui.chronometer.ChronoAnalogArabicAnalogUI;
+import ui.chronometer.ChronoAnalogArabicUI;
 import ui.layouts.AllChronoArabicLayoutUI;
 
 import java.util.List;
@@ -15,7 +15,7 @@ public class OpenChronoArabicButton extends OpenChronoButton {
      */
     public OpenChronoArabicButton(Chronometer chronometer) {
         super(ARABIC_CLOCK);
-        this.addActionListener(e -> super.createFrameWithChronometer(new ChronoAnalogArabicAnalogUI(chronometer)));
+        this.addActionListener(e -> super.createFrameWithChronometer(new ChronoAnalogArabicUI(chronometer)));
     }
 
     /**
