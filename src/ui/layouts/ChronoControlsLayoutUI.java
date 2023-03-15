@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ChronoControlsLayoutUI extends JPanel {
-    public static final String CHRONO = "Chrono #";
+    private static final String CHRONO = "Chrono #";
 
     /**
      * A layout containing all buttons to manage one chronometer subject and its visual representations
